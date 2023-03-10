@@ -44,7 +44,7 @@ const allUsers=async(req,res)=>{
             ]
         }:{}
         const users=await User.find(keyword).find({_id:{$ne:userData._id}})
-        req.status(200).json({users})
+        res.status(200).json({users})
     } catch (error) {
         res.status(400).json({message:error.message})
     }
